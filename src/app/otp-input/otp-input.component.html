@@ -1,0 +1,12 @@
+<input 
+#inputEl
+*ngFor="let input of inputs.controls,let i = index"
+(focus)="handleFocus($event)"
+(blur) = "onTouched?.()"
+(keypress) = "handleKeyPress($event, i)"
+(input) = "handleInput()"
+(keydown) = "handleKeyDown($event, i)"
+[formControl]="$any(input)"
+inputmode="numeric"
+[attr.autocomplete]="i === 0 ? 'one-time-code' : null"
+/>
